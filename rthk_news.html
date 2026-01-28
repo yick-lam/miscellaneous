@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>今日焦點 最近10天</title>
+<style>
+    body {
+        font-family: sans-serif;
+        font-size: 32px;          /* 大字體 */
+        line-height: 1.6;
+        margin: 40px;
+    }
+    a {
+        font-size: 38px;          /* 連結更大 */
+        color: #b31e3a;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<script>
+const prefix = "https://archive.rthk.hk/mp3/radio/archive/radio1/hktoday/m4a/";
+let today = new Date(Date.now() + 8*3600000); // 香港時間
+
+for(let i = 0; i < 10; i++) {
+    let d = new Date(today);
+    d.setDate(d.getDate() - i);
+    
+    let yyyymmdd = 
+        d.getFullYear() +
+        String(d.getMonth() + 1).padStart(2, '0') +
+        String(d.getDate()).padStart(2, '0');
+    
+    document.write(`<a href="${prefix}${yyyymmdd}.m4a" target="_blank">${yyyymmdd}</a><br><br>`);
+}
+</script>
+
+</body>
+</html>
