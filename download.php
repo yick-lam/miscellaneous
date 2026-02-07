@@ -1,20 +1,4 @@
 <?php 
-   # the idea:
-   # Part 1: time lapse video
-   # 1) is to let user select a being date and end date (using html entities)
-   # 2) this will send a request to the server. The server will 
-   #    - start generation of lapse video in the background
-   #    - return a token to the client
-   # 3) the client will use the token to poll the server for status of video generation
-   # 4) result is one of the following
-   #    - video is ready: provide a link to download the video
-   #    - video generation failed: show error message
-   # 5) the UI must provide a previously downloaded video list for user to download again
-   #    and if the user request the same video again, the server will return the existing video 
-   #    if it is still available
-   # 
-   # Part 2: video download
-   # 
   ?>
 <!DOCTYPE html>
 <html>
